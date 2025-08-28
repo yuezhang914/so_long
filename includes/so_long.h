@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:13 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/12 18:35:53 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/08/28 03:34:49 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,12 @@ int			validate_map(char **map);
 int			is_path_valid(char **map);
 void		zero_game(t_game *g);
 void		load_and_prepare(t_game *g, char *file);
+int			load_one(t_game *g, t_img *dst, char *path);
 int			load_images(t_game *g);
 void		free_images(t_game *g);
 void		center_camera_on_player(t_game *g);
+void		put_img(t_game *g, t_img *img, int sx, int sy);
+void		draw_player_if_allowed(t_game *g, int sx, int sy);
 void		render_map(t_game *g);
 void		setup_hooks(t_game *g);
 int			handle_key(int key, void *param);

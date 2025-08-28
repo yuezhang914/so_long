@@ -6,13 +6,13 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 23:05:58 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/12 18:22:46 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/08/18 02:10:17 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	load_one(t_game *g, t_img *dst, char *path)
+int	load_one(t_game *g, t_img *dst, char *path)
 {
 	dst->ptr = mlx_xpm_file_to_image(g->mlx, path, &dst->w, &dst->h);
 	if (!dst->ptr)

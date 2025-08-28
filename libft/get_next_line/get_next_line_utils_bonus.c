@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:22:02 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/12 15:44:00 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/08/28 04:05:47 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ char	*gnl_strjoin(char const *s1, char const *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-		return (gnl_strdup(s2)));
+		return (gnl_strdup(s2));
 	if (!s2)
-		return (gnl_strdup(s1)));
+		return (gnl_strdup(s1));
 	len1 = gnl_strlen(s1);
 	len2 = gnl_strlen(s2);
 	str = malloc(len1 + len2 + 1);
