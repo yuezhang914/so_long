@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:42:52 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/02 03:27:34 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/09/22 16:07:37 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,6 @@ static char	**dup_map(char **src)
 		h++;
 	}
 	return (des);
-}
-
-static void	flood_fill(char **map, int y, int x)
-{
-	if (x < 0 || y < 0 || !map[y] || x >= (int)ft_strlen(map[y]))
-		return ;
-	if (map[y][x] == '1' || map[y][x] == 'V')
-		return ;
-	map[y][x] = 'V';
-	flood_fill(map, y + 1, x);
-	flood_fill(map, y - 1, x);
-	flood_fill(map, y, x - 1);
-	flood_fill(map, y, x + 1);
 }
 
 static int	scan_result(char **map)

@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 03:06:31 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/28 03:18:41 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/03 05:27:06 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,23 @@ int	validate_map(char **map)
 
 int	calc_view_size(t_game *g, int sw, int sh)
 {
-	int	max_cols;
-	int	max_rows;
+	int	want_cols;
+	int	want_rows;
 	int	cols;
 	int	rows;
 
-	max_cols = sw / g->tile;
-	max_rows = sh / g->tile;
-	if (max_cols < 1)
-		max_cols = 1;
-	if (max_rows < 1)
-		max_rows = 1;
-	if (g->map_w < max_cols)
+	(void)sw;
+	(void)sh;
+	want_cols = 40;
+	want_rows = 15;
+	if (g->map_w < want_cols)
 		cols = g->map_w;
 	else
-		cols = max_cols;
-	if (g->map_h < max_rows)
+		cols = want_cols;
+	if (g->map_h < want_rows)
 		rows = g->map_h;
 	else
-		rows = max_rows;
+		rows = want_rows;
 	g->view_cols = cols;
 	g->view_rows = rows;
 	g->cam_x = 0;

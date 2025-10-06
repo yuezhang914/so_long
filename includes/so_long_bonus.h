@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:15 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/28 04:09:39 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/09/22 14:11:50 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # endif
 
 # ifndef BONUS_ENEMY_STEP_TICKS
-#  define BONUS_ENEMY_STEP_TICKS 180
+#  define BONUS_ENEMY_STEP_TICKS 30000
 # endif
 
 typedef struct s_v2i

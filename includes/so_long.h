@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:13 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/28 03:34:49 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/09/22 16:07:37 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include "libft.h"
 # include <fcntl.h>
+# include <limits.h>
 # include <mlx.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -72,6 +74,8 @@ void		free_images(t_game *g);
 void		center_camera_on_player(t_game *g);
 void		put_img(t_game *g, t_img *img, int sx, int sy);
 void		draw_player_if_allowed(t_game *g, int sx, int sy);
+int			flood_pass(char **map, int w, int h);
+void		flood_fill(char **map, int sy, int sx);
 void		render_map(t_game *g);
 void		setup_hooks(t_game *g);
 int			handle_key(int key, void *param);
