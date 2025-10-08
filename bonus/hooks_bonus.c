@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:36 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/28 03:25:59 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/08 03:25:27 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	*hooks_bonus_install(t_game *g, t_bonus *b)
 	c->need_redraw = 1;
 	mlx_loop_hook(g->mlx, loop_cb, c);
 	mlx_expose_hook(g->win, expose_cb, c);
+	mlx_hook(g->win, 2, 1L << 0, bonus_handle_key, c);
 	return ((void *)c);
 }
 

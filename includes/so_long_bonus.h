@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:15 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/09/22 14:11:50 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/08 03:45:30 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft.h"
 # include "so_long.h"
+# include <X11/keysym.h>
 # include <mlx.h>
 # include <stdbool.h>
 # include <stddef.h>
@@ -26,7 +27,7 @@
 # endif
 
 # ifndef BONUS_ENEMY_STEP_TICKS
-#  define BONUS_ENEMY_STEP_TICKS 30000
+#  define BONUS_ENEMY_STEP_TICKS 20000
 # endif
 
 typedef struct s_v2i
@@ -120,6 +121,15 @@ void			enemies_step_once(t_game *g, t_bonus *b);
 
 int				collide_check_lose(t_game *g, t_bonus *b);
 
+int				enemy_at(t_bonus *b, int x, int y);
+void			handle_pickup_and_win(t_hookctx *c, int nx, int ny, char tile);
+void			do_move_and_mark(t_hookctx *c, int nx, int ny);
+
+int				bonus_key_to_delta(int key, int *dx, int *dy);
+int				is_blocked_tile(t_game *g, char tile);
+void			bonus_try_move_player(t_hookctx *c, int dx, int dy);
+int				bonus_handle_key(int key, void *param);
+
 int				bonus_images_load(t_game *g, t_bonus *b);
 void			bonus_images_free(t_game *g, t_bonus *b);
 
@@ -131,6 +141,8 @@ void			*hooks_bonus_install(t_game *g, t_bonus *b);
 void			hooks_bonus_free(void *opaque);
 
 void			lose_and_quit(t_hookctx *c);
+void			win_and_quit(t_hookctx *c);
+
 int				validate_map(char **map);
 int				calc_view_size(t_game *g, int sw, int sh);
 int				create_window_if_needed(t_game *g);
