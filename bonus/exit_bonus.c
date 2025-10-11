@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 03:43:16 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/10/08 03:45:30 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/09 17:39:48 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	lose_and_quit(t_hookctx *c)
 	enemies_free(c->b);
 	bonus_images_free(c->g, c->b);
 	sl_free_all(c->g);
+	hooks_bonus_free((void *)c);
 	exit(0);
 }
 
@@ -27,5 +28,6 @@ void	win_and_quit(t_hookctx *c)
 	enemies_free(c->b);
 	bonus_images_free(c->g, c->b);
 	sl_free_all(c->g);
+	hooks_bonus_free((void *)c);
 	exit(0);
 }
