@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/17 04:51:45 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/28 03:18:41 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/12 04:59:42 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,6 @@ static int	sizes_ok(t_game *g, t_bonus *b)
 	return (1);
 }
 
-static void	img_free3(t_game *g, t_img *a, t_img *b, t_img *c)
-{
-	if (c->ptr != NULL)
-	{
-		mlx_destroy_image(g->mlx, c->ptr);
-		c->ptr = NULL;
-	}
-	if (b->ptr != NULL)
-	{
-		mlx_destroy_image(g->mlx, b->ptr);
-		b->ptr = NULL;
-	}
-	if (a->ptr != NULL)
-	{
-		mlx_destroy_image(g->mlx, a->ptr);
-		a->ptr = NULL;
-	}
-}
-
 int	bonus_images_load(t_game *g, t_bonus *b)
 {
 	int	ok;
@@ -59,7 +40,7 @@ int	bonus_images_load(t_game *g, t_bonus *b)
 		ok = sizes_ok(g, b);
 	if (!ok)
 	{
-		img_free3(g, &b->player2, &b->enemy1, &b->enemy2);
+		bonus_images_free(g, b);
 		return (0);
 	}
 	b->player_imgs[0] = g->player.ptr;

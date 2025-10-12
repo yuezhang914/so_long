@@ -6,7 +6,7 @@
 /*   By: yzhang2 <yzhang2@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 17:54:38 by yzhang2           #+#    #+#             */
-/*   Updated: 2025/08/17 04:04:00 by yzhang2          ###   ########.fr       */
+/*   Updated: 2025/10/12 05:10:47 by yzhang2          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,25 +83,4 @@ void	enemies_free(t_bonus *b)
 		free(b->enemies.items);
 	b->enemies.items = NULL;
 	b->enemies.count = 0;
-}
-
-int	collide_check_lose(t_game *g, t_bonus *b)
-{
-	int	px;
-	int	py;
-	int	i;
-
-	px = g->player_pos.x;
-	py = g->player_pos.y;
-	i = 0;
-	while (i < b->enemies.count)
-	{
-		if (b->enemies.items[i].x == px && b->enemies.items[i].y == py)
-		{
-			b->lost = 1;
-			return (1);
-		}
-		i = i + 1;
-	}
-	return (0);
 }
