@@ -1,14 +1,14 @@
 so_long — Project Overview
 
 
-# What this project is:
+# What this project is
 
 so_long is a simple 2D collect-and-exit game. The player moves on a map represented by characters, collects all C (collectibles), then reaches the exit E to complete the level. Maps are described by .ber files (rectangular tiles, walls marked as 1, etc.). The game uses the X11 MinilibX (mini graphics library) for graphics, keyboard events, and rendering.
 
 This repository is my implementation from scratch following the project specification. It includes the mandatory part and bonus extensions (enemies, animations, HUD, etc.).
 
 
-# What I did:
+# What I did
 
 I implemented the full game pipeline: map loading and validation, rendering, player input handling, level reachability checks (pathfinding), and the bonus features (enemies, animations, HUD). Specifically I:
 
@@ -30,7 +30,7 @@ Wrote several utility helpers and error-handling routines.
 
 
 
-# Completed features:
+# Completed features
 
 Mandatory:
 
@@ -67,7 +67,7 @@ A suite of test maps (test-maps/) covering many valid and invalid cases.
 
 
 
-# Project structure (modules):
+# Project structure (modules)
 
 includes/ — public headers, defines data structures (t_game, t_bonus, t_hookctx, etc.) and function prototypes.
 
@@ -85,7 +85,7 @@ minilibx-linux/ — MinilibX library source (provided by 42).
 
 
 
-# Environment:
+# Environment
 
 Linux with X11 support, or WSL2 + X server (MinilibX must be able to run).
 
@@ -98,7 +98,7 @@ sudo apt update
 sudo apt install build-essential libx11-dev libxext-dev
 
 
-# Build:
+# Build
 
 Build the mandatory version
 make
@@ -113,7 +113,7 @@ After successful build you will get executables:
 Both programs accept a .ber map file as the argument. If the map is invalid the program prints an error message and exits.
 
 
-# Controls:
+# Controls
 
 Move: W / A / S / D or Up / Left / Down / Right (arrow keys)
 
